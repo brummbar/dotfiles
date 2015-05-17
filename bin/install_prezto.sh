@@ -51,7 +51,6 @@ main() {
 
     fi
 
-
     # Create symlinks for prezto
     for i in ${FILES_TO_SYMLINK[@]}; do
 
