@@ -1,0 +1,9 @@
+[color]
+    ui = auto
+[core]
+    editor = vim
+    excludesfile = /Users/francesco/.gitignore
+[push]
+	default = simple
+[include]
+    path = ~/.gitconfig.local
