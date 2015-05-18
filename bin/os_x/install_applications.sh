@@ -58,6 +58,13 @@ declare -r -a HOMEBREW_CASKS=(
     "vlc"
 )
 
+# Homebrew Alternate Casks
+# https://github.com/caskroom/homebrew-versions
+
+declare -r -a HOMEBREW_ALTERNATE_CASKS=(
+    "java6"
+)
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 brew_install() {
@@ -129,6 +136,10 @@ main() {
 
         brew_tap "caskroom/cask" \
             && brew_install "HOMEBREW_CASKS[@]" "cask"
+        printf "\n"
+
+        brew_tap "caskroom/versions" \
+            && brew_install "HOMEBREW_ALTERNATE_CASKS[@]" "cask"
         printf "\n"
 
     fi
