@@ -6,7 +6,6 @@ cd "$(dirname "${BASH_SOURCE}")" && source "../utils.sh"
 # https://github.com/Homebrew/homebrew
 
 declare -r -a HOMEBREW_FORMULAE=(
-    "bash"
     "caskroom/cask/brew-cask"
     "curl --with-openssl"
     "wget --enable-iri"
@@ -19,10 +18,10 @@ declare -r -a HOMEBREW_FORMULAE=(
     "vim --override-system-vi"
 )
 
-# Homebrew Versions Formulae
-# https://github.com/Homebrew/homebrew-versions
+# Homebrew Php Formulae
+# https://github.com/Homebrew/homebrew-php
 
-declare -r -a HOMEBREW_VERSIONS_FORMULAE=(
+declare -r -a HOMEBREW_PHP_FORMULAE=(
     "php54"
     "php54-xdebug"
 )
@@ -57,12 +56,6 @@ declare -r -a HOMEBREW_CASKS=(
     "spotify"
     "qbittorrent"
     "vlc"
-)
-
-# Homebrew Alternate Casks
-# https://github.com/caskroom/homebrew-versions
-
-declare -r -a HOMEBREW_ALTERNATE_CASKS=(
 )
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -128,16 +121,13 @@ main() {
         brew_install "HOMEBREW_FORMULAE[@]"
         printf "\n"
 
-        brew_tap "homebrew/versions" \
-            && brew_install "HOMEBREW_VERSIONS_FORMULAE[@]"
+        brew_tap "homebrew/dupes" \
+            && brew_tap "homebrew/versions" \
+            && brew_install "HOMEBREW_PHP_FORMULAE[@]"
         printf "\n"
 
         brew_tap "caskroom/cask" \
             && brew_install "HOMEBREW_CASKS[@]" "cask"
-        printf "\n"
-
-        brew_tap "caskroom/versions" \
-            && brew_install "HOMEBREW_ALTERNATE_CASKS[@]" "cask"
         printf "\n"
 
     fi
