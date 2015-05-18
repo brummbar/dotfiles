@@ -80,11 +80,6 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    print_info "Clone repos"
-    ./bin/clone_repos.sh
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
     print_info "Create symbolic links"
     ./bin/create_symbolic_links.sh
 
