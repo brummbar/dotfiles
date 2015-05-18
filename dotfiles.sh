@@ -107,6 +107,17 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    print_info "Set preferences"
+
+    ask_for_confirmation "Do you want to set the custom preferences (OSX only)?"
+    printf "\n"
+
+    if answer_is_yes; then
+        ./bin/set_preferences.sh
+    fi
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     print_info "Restart"
 
     ask_for_confirmation "Do you want to restart?"
