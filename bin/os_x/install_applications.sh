@@ -123,7 +123,7 @@ main() {
 
         brew_tap "homebrew/dupes" \
             && brew_tap "homebrew/versions" \
-            && brew_tap "homebrew/homebrew-php" \
+            && brew_tap "homebrew/php" \
             && brew_install "HOMEBREW_PHP_FORMULAE[@]"
         printf "\n"
 
