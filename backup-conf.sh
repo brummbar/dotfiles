@@ -48,7 +48,7 @@ main() {
 
     for sourceFile in "${FILES_TO_COPY[@]}"; do
 
-        targetFile="$MIGRATION_DIR/$(printf "%s" "$sourceFile" | sed "s/.*\/\(.*\)/\1/g")"
+        targetFile="$MIGRATION_DIR/$(printf "%s" "$sourceFile" | sed -e "s/.*\/\(.*\)/\1/g" -e "s/^\.\(.*\)/\1/g")"
         copyParams=""
 
         if [ -e "$sourceFile" ]; then
