@@ -10,7 +10,6 @@ declare -r -a HOMEBREW_FORMULAE=(
     "curl --with-openssl"
     "wget --enable-iri"
     "git"
-    "composer"
     "mariadb"
     "htop-osx"
     "gifsicle"
@@ -24,6 +23,7 @@ declare -r -a HOMEBREW_FORMULAE=(
 declare -r -a HOMEBREW_PHP_FORMULAE=(
     "php54"
     "php54-xdebug"
+    "composer"
 )
 
 # Homebrew Casks
@@ -123,6 +123,7 @@ main() {
 
         brew_tap "homebrew/dupes" \
             && brew_tap "homebrew/versions" \
+            && brew_tap "homebrew/homebrew-php" \
             && brew_install "HOMEBREW_PHP_FORMULAE[@]"
         printf "\n"
 
