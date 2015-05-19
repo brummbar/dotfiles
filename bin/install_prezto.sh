@@ -46,7 +46,7 @@ main() {
     # Clone Brummbar prezto
     if [ ! -d "${ZDOTDIR:-$HOME}/.zprezto" ]; then
 
-        git clone --recursive https://github.com/brummbar/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+        git clone --recursive https://github.com/brummbar/prezto.git "${ZDOTDIR:-$HOME}/.zprezto" &> /dev/null
         print_result $? "Clone Brummbar prezto" "true"
 
     fi
