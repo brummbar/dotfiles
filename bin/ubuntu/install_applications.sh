@@ -3,37 +3,21 @@
 cd "$(dirname "${BASH_SOURCE}")" && source "../utils.sh"
 
 declare -a APT_PACKAGES=(
+    # System
+    "curl"
+    "git"
+    "vim"
 
-    # Tools for compiling/building software from source
-    "build-essential"
+    # Browsers
+    "google-chrome-stable"
+    "opera-stable"
 
-    # GnuPG archive keys of the Debian archive
-    "debian-archive-keyring"
-
-    # Software which is not included by default
-    # in Ubuntu due to legal or copyright reasons
-    #"ubuntu-restricted-extras"
+    # Development
+    "filezilla"
+    "sublime-text-installer"
 
     # Other
-    "atom"
-    "chromium-browser"
-    "curl"
-    "firefox-trunk"
-    "flashplugin-installer"
-    "gimp"
-    "git"
-    "google-chrome-unstable"
-    "imagemagick"
-    "nautilus-dropbox"
-    "opera"
-    "opera-next"
-    "tmux"
-    "transmission"
-    "vim-gnome"
-    "virtualbox"
     "vlc"
-    "xclip"
-    "zopfli"
 
 )
 
@@ -51,30 +35,22 @@ add_ppa() {
 
 add_software_sources() {
 
-    # Atom
-    [ $(cmd_exists "atom") -eq 1 ] \
-        && add_ppa "webupd8team/atom"
-
-    # Firefox Nightly
-    [ $(cmd_exists "firefox-trunk") -eq 1 ] \
-        && add_ppa "ubuntu-mozilla-daily/ppa"
+    # Sublime Text 3
+    [ $(cmd_exists "subl") -eq 1 ] \
+        && add_ppa "webupd8team/sublime-text-3"
 
     # Google Chrome
     [ $(cmd_exists "google-chrome") -eq 1 ] \
         && add_key "https://dl-ssl.google.com/linux/linux_signing_key.pub" \
         && add_source_list \
-                "http://dl.google.com/linux/deb/ stable main" \
+                "http://dl.google.com/linux/chrome/deb/ stable main" \
                 "google-chrome.list"
 
-    # NodeJS
-    [ $(cmd_exists "node") -eq 1 ] \
-        && add_ppa "chris-lea/node.js"
-
-    # Opera & Opera Next
+    # Opera
     [ $(cmd_exists "opera") -eq 1 ] \
         && add_key "http://deb.opera.com/archive.key" \
         && add_source_list \
-                "http://deb.opera.com/opera/ stable non-free" \
+                "http://deb.opera.com/opera-stable/ stable non-free" \
                 "opera.list"
 
 }
