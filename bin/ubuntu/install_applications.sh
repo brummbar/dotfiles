@@ -8,6 +8,11 @@ declare -a APT_PACKAGES=(
     "git"
     "vim"
 
+    # Lamp
+    "php5"
+    "mariadb-client"
+    "mariadb-server"
+
     # Browsers
     "google-chrome-stable"
     "opera-stable"
@@ -82,7 +87,7 @@ update_and_upgrade() {
     # Resynchronize the package index files from their sources
     execute "sudo apt-get update -qqy" "update"
 
-    # Unstall the newest versions of all packages installed
+    # Install the newest versions of all packages installed
     execute "sudo apt-get upgrade -qqy" "upgrade"
 
 }
