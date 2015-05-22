@@ -10,7 +10,6 @@ declare -a APT_PACKAGES=(
 
     # Lamp
     "php5"
-    "mariadb-client"
     "mariadb-server"
 
     # Browsers
