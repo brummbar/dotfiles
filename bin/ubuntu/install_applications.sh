@@ -11,6 +11,8 @@ declare -a APT_PACKAGES=(
     # Lamp
     "php5"
     "mariadb-server"
+    "php5-mysql"
+    "php5-curl"
 
     # Browsers
     "google-chrome-stable"
