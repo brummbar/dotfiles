@@ -13,6 +13,7 @@ declare -a APT_PACKAGES=(
     "mariadb-server"
     "php5-mysql"
     "php5-curl"
+    "php5-xdebug"
 
     # Browsers
     "google-chrome-stable"
@@ -23,6 +24,8 @@ declare -a APT_PACKAGES=(
     "sublime-text-installer"
 
     # Other
+    "qbittorrent"
+    "unity-tweak-tool"
     "vlc"
 
 )
