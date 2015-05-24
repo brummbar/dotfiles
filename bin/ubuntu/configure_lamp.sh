@@ -30,6 +30,9 @@ main() {
 	# Enable mod_rewrite
 	execute "a2enmod rewrite" "mod_rewrite enabled"
 
+	# Restart apache
+	execute "service apache2 restart" "Restart Apache"
+
 }
 
 main
