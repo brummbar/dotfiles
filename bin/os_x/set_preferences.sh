@@ -100,6 +100,7 @@ main() {
     )
 
     execute "set_iterm_preferences" "iTerm2"
+    execute "set_dashboard_preferences" "Dashboard"
     execute "set_dock_preferences" "Dock"
     execute "set_finder_preferences" "Finder"
     execute "set_keyboard_preferences" "Keyboard"
