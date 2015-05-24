@@ -118,6 +118,17 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    print_info "Configure LAMP"
+
+    ask_for_confirmation "Do you want to configure the LAMP stack (Ubuntu only)?"
+    printf "\n"
+
+    if answer_is_yes; then
+        ./bin/configure_lamp.sh
+    fi
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     print_info "Restart"
 
     ask_for_confirmation "Do you want to restart?"
