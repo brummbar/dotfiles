@@ -85,17 +85,6 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-    print_info "Install Prezto"
-
-    ask_for_confirmation "Do you want to install Prezto?"
-    printf "\n"
-
-    if answer_is_yes; then
-        ./bin/install_prezto.sh
-    fi
-
-    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
     print_info "Install applications"
 
     ask_for_confirmation "Do you want to install the applications/command line tools?"
@@ -103,6 +92,17 @@ main() {
 
     if answer_is_yes; then
         ./bin/install_applications.sh
+    fi
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    print_info "Install Prezto"
+
+    ask_for_confirmation "Do you want to install Prezto?"
+    printf "\n"
+
+    if answer_is_yes; then
+        ./bin/install_prezto.sh
     fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
