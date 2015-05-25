@@ -16,6 +16,7 @@ declare -a FILES_TO_SYMLINK=(
 main() {
 
     declare -r BASE16_DIR="$HOME/.base16"
+    declare -r OS="$(get_os)"
 
     local i=""
     local sourceFile=""
@@ -64,6 +65,21 @@ main() {
     # Symlink the matching vim color
     mkdir -p "$HOME/.vim/colors"
     symlink "$HOME/.vim/colors/base16-tomorrow.vim" "$BASE16_DIR/base16-vim/colors/base16-tomorrow.vim"
+
+    # Install iTerm2/Terminator color schemes based on os.
+    if [ "$OS" == "osx" ]; then
+
+        # todo: fetch profile
+        echo "nothing" &> /dev/null
+
+    elif [ "$OS" == "ubuntu" ]; then
+
+        sourceFile="$(cd .. && pwd)/terminator/config"
+        targetFile="$HOME/.config/terminator/config"
+
+        symlink $targetFile $sourceFile
+
+    fi
 
 }
 
