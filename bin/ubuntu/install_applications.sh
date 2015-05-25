@@ -7,6 +7,8 @@ declare -a APT_PACKAGES=(
     "curl"
     "git"
     "vim"
+    "htop"
+    "terminator"
 
     # Lamp
     "php5"
