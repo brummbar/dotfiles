@@ -14,12 +14,14 @@
     allow_bold = False
   [[Base16 Tomorrow Dark]]
     palette = "#1d1f21:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#c5c8c6:#969896:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#ffffff"
+    copy_on_selection = True
+    background_image = None
     background_darkness = 0.97
     background_type = transparent
-    background_image = None
+    use_system_font = False
     cursor_color = "#c5c8c6"
     foreground_color = "#c5c8c6"
-    copy_on_selection = True
+    font = Ubuntu Mono 12
     background_color = "#1d1f21"
 [layouts]
   [[default]]
