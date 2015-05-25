@@ -50,7 +50,10 @@ set_ui_and_ux_settings() {
     gsettings set com.canonical.indicator.datetime show-date true && \
     gsettings set com.canonical.indicator.datetime show-day true && \
     gsettings set com.canonical.indicator.datetime show-year false && \
-    gsettings set com.canonical.indicator.datetime time-format "24-hour"
+    gsettings set com.canonical.indicator.datetime time-format "24-hour" && \
+
+    # Hide keyboard switcher
+    gsettings set com.canonical.indicator.keyboard visible false
 
 }
 
