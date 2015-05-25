@@ -6,9 +6,10 @@ declare -a APT_PACKAGES=(
     # System
     "curl"
     "git"
-    "vim"
     "htop"
     "terminator"
+    "vim"
+    "zsh"
 
     # Lamp
     "php5"
