@@ -53,7 +53,13 @@ set_ui_and_ux_settings() {
     gsettings set com.canonical.indicator.datetime time-format "24-hour" && \
 
     # Hide keyboard switcher
-    gsettings set com.canonical.indicator.keyboard visible false
+    gsettings set com.canonical.indicator.keyboard visible false && \
+
+    # Auto-hide launcher
+    gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ launcher-hide-mode 1 && \
+
+    # Remove "Show desktop" icon from switcher
+    gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ disable-show-desktop true
 
 }
 
