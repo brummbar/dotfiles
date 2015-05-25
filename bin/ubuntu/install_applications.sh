@@ -70,6 +70,32 @@ add_source_list() {
     sudo sh -c "printf 'deb $1' >> '/etc/apt/sources.list.d/$2'"
 }
 
+install_composer() {
+
+    local tmpFile="$(mktemp -u XXXXX)"
+
+    if [ $(cmd_exists "composer") -eq 0 ]; then
+        print_success "Composer already installed" && return
+    fi
+
+    \curl -sS https://getcomposer.org/installer | php -- --filename=$tmpFile &> /dev/null
+
+    if [ $? -eq 0 ]; then
+
+        sudo mv $tmpFile /usr/local/bin/composer
+
+        # Remove the file if download failed
+        if [ $? -eq 1 ]; then
+            rm -f tmpFile
+            print_success "Removed composer.phar tmp file"
+        else
+            print_success "Install composer globally"
+        fi
+
+    fi
+
+}
+
 install_package() {
     local q="${2:-$1}"
 
@@ -117,6 +143,8 @@ main() {
 
     update_and_upgrade
     remove_unneeded_packages
+
+    install_composer
 
 }
 
