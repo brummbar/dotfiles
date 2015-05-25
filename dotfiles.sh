@@ -129,6 +129,17 @@ main() {
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+    print_info "Install Ruby Version Manager"
+
+    ask_for_confirmation "Do you want to install RVM?"
+    printf "\n"
+
+    if answer_is_yes; then
+        ./bin/install_rvm.sh
+    fi
+
+    # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
     print_info "Restart"
 
     ask_for_confirmation "Do you want to restart?"
