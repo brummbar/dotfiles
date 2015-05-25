@@ -57,30 +57,13 @@ main() {
         sourceFile="${ZDOTDIR:-$HOME}/.zprezto/runcoms/$i"
         targetFile="${ZDOTDIR:-$HOME}/.$i"
 
-        if [ -e "$targetFile" ]; then
-            if [ "$(readlink "$targetFile")" != "$sourceFile" ]; then
-
-                ask_for_confirmation "'$targetFile' already exists, do you want to overwrite it?"
-                if answer_is_yes; then
-                    execute "ln -fs $sourceFile $targetFile" "$targetFile → $sourceFile"
-                else
-                    print_error "$targetFile → $sourceFile"
-                fi
-
-            else
-                print_success "$targetFile → $sourceFile"
-            fi
-        else
-            execute "ln -fs $sourceFile $targetFile" "$targetFile → $sourceFile"
-        fi
+        symlink $targetFile $sourceFile
 
     done
 
     # Symlink the matching vim color
     mkdir -p "$HOME/.vim/colors"
-    sourceFile="$BASE16_DIR/base16-vim/colors/base16-tomorrow.vim"
-    targetFile="$HOME/.vim/colors/base16-tomorrow.vim"
-    execute "ln -fs $sourceFile $targetFile" "$targetFile → $sourceFile"
+    symlink "$HOME/.vim/colors/base16-tomorrow.vim" "$BASE16_DIR/base16-vim/colors/base16-tomorrow.vim"
 
 }
 
