@@ -18,6 +18,20 @@ set_privacy_settings() {
 }
 
 # ----------------------------------------------------------------------
+# | System                                                             |
+# ----------------------------------------------------------------------
+
+set_system_settings() {
+
+	local LDMPATH="/etc/lightdm/lightdm.conf.d"
+
+	# Create a configuration file to disable guest login on Ubuntu
+	sudo mkdir -p $LDMPATH && \
+		printf "[SeatDefaults]\nallow-guest=false" | sudo tee "$LDMPATH/50-allow-guest.conf"
+
+}
+
+# ----------------------------------------------------------------------
 # | UI/UX                                                              |
 # ----------------------------------------------------------------------
 
@@ -44,6 +58,7 @@ set_ui_and_ux_settings() {
 
 main() {
     execute "set_privacy_settings" "Privacy"
+    execute "set_system_settings" "System"
     execute "set_ui_and_ux_settings" "UI & UX"
 }
 
