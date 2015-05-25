@@ -110,3 +110,22 @@ print_success() {
     # Print output in green
     printf "\e[0;32m  [✔] $1\e[0m\n"
 }
+
+symlink() {
+    if [ -e "$1" ]; then
+        if [ "$(readlink "$1")" != "$2" ]; then
+
+            ask_for_confirmation "'$1' already exists, do you want to overwrite it?"
+            if answer_is_yes; then
+                execute "ln -fs $2 $1" "$1 → $2"
+            else
+                print_error "$1 → $2"
+            fi
+
+        else
+            print_success "$1 → $2"
+        fi
+    else
+        execute "ln -fs $2 $1" "$1 → $2"
+    fi
+}
