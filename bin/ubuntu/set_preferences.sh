@@ -17,10 +17,34 @@ set_privacy_settings() {
 
 }
 
+# ----------------------------------------------------------------------
+# | UI/UX                                                              |
+# ----------------------------------------------------------------------
+
+set_ui_and_ux_settings() {
+
+    # Hide the bluetooth and volume icons from the menu bar
+    gsettings set com.canonical.indicator.bluetooth visible false && \
+
+    # Hide the battery icon from the menu bar when the battery is not in use
+    gsettings set com.canonical.indicator.power icon-policy "charge" && \
+    gsettings set com.canonical.indicator.power show-time false && \
+
+    # Set date format in the menu bar
+    gsettings set com.canonical.indicator.datetime show-calendar true && \
+    gsettings set com.canonical.indicator.datetime show-clock true && \
+    gsettings set com.canonical.indicator.datetime show-date true && \
+    gsettings set com.canonical.indicator.datetime show-day true && \
+    gsettings set com.canonical.indicator.datetime show-year false && \
+    gsettings set com.canonical.indicator.datetime time-format "24-hour"
+
+}
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 main() {
     execute "set_privacy_settings" "Privacy"
+    execute "set_ui_and_ux_settings" "UI & UX"
 }
 
 main
