@@ -1,4 +1,5 @@
 [global_config]
+  title_hide_sizetext = True
   title_transmit_bg_color = "#cc6666"
   focus = system
   title_inactive_bg_color = "#969896"
@@ -17,6 +18,7 @@
     copy_on_selection = True
     background_image = None
     background_darkness = 0.97
+    scrollback_lines = 1000
     background_type = transparent
     use_system_font = False
     cursor_color = "#c5c8c6"
@@ -32,4 +34,5 @@
     [[[window0]]]
       type = Window
       parent = ""
+      size = 900, 600
 [plugins]
