@@ -16,6 +16,7 @@ declare -a FILES_TO_SYMLINK=(
 main() {
 
     declare -r BASE16_DIR="$HOME/.base16"
+    declare -r PREZTO_DIR="${ZDOTDIR:-$HOME}/.zprezto"
     declare -r OS="$(get_os)"
 
     local i=""
@@ -45,9 +46,9 @@ main() {
     fi
 
     # Clone Brummbar prezto
-    if [ ! -d "${ZDOTDIR:-$HOME}/.zprezto" ]; then
+    if [ ! -d $PREZTO_DIR ]; then
 
-        git clone --recursive https://github.com/brummbar/prezto.git "${ZDOTDIR:-$HOME}/.zprezto" &> /dev/null
+        git clone --recursive https://github.com/brummbar/prezto.git $PREZTO_DIR &> /dev/null
         print_result $? "Clone Brummbar prezto" "true"
 
     fi
