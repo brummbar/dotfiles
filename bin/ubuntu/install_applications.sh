@@ -25,6 +25,7 @@ declare -a APT_PACKAGES=(
     # Development
     "filezilla"
     "sublime-text-installer"
+    "oracle-java8-installer"
 
     # Other
     "qbittorrent"
@@ -50,6 +51,10 @@ add_software_sources() {
     # Sublime Text 3
     [ $(cmd_exists "subl") -eq 1 ] \
         && add_ppa "webupd8team/sublime-text-3"
+
+    # Oracle JDK 8
+    [ $(cmd_exists "java") -eq 1 ] \
+        && add_ppa "webupd8team/java"
 
     # Google Chrome
     [ $(cmd_exists "google-chrome") -eq 1 ] \
