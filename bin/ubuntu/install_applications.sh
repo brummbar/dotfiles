@@ -56,6 +56,10 @@ add_software_sources() {
     [ $(cmd_exists "java") -eq 1 ] \
         && add_ppa "webupd8team/java"
 
+    # Terminator
+    [ $(cmd_exists "terminator") -eq 1 ] \
+        && add_ppa "gnome-terminator"
+
     # Google Chrome
     [ $(cmd_exists "google-chrome") -eq 1 ] \
         && add_key "https://dl-ssl.google.com/linux/linux_signing_key.pub" \
