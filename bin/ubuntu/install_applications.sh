@@ -17,6 +17,7 @@ declare -a APT_PACKAGES=(
     "php5-mysql"
     "php5-curl"
     "php5-xdebug"
+    "php5-gd"
 
     # Browsers
     "google-chrome-stable"
