@@ -12,8 +12,6 @@ declare -r -a HOMEBREW_FORMULAE=(
     "git"
     "mariadb"
     "htop-osx"
-    "gifsicle"
-    "optipng"
     "vim --override-system-vi"
 )
 
