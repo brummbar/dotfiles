@@ -2,7 +2,6 @@ set nocompatible
 
 let base16colorspace=256
 set background=dark
-set t_Co=16
 colorscheme base16-tomorrow
 
 set autoindent

@@ -17,6 +17,7 @@ declare -a APT_PACKAGES=(
     "php5-mysql"
     "php5-curl"
     "php5-xdebug"
+    "php5-gd"
 
     # Browsers
     "google-chrome-stable"
@@ -25,6 +26,7 @@ declare -a APT_PACKAGES=(
     # Development
     "filezilla"
     "sublime-text-installer"
+    "oracle-java8-installer"
 
     # Other
     "qbittorrent"
@@ -50,6 +52,14 @@ add_software_sources() {
     # Sublime Text 3
     [ $(cmd_exists "subl") -eq 1 ] \
         && add_ppa "webupd8team/sublime-text-3"
+
+    # Oracle JDK 8
+    [ $(cmd_exists "java") -eq 1 ] \
+        && add_ppa "webupd8team/java"
+
+    # Terminator
+    [ $(cmd_exists "terminator") -eq 1 ] \
+        && add_ppa "gnome-terminator"
 
     # Google Chrome
     [ $(cmd_exists "google-chrome") -eq 1 ] \
