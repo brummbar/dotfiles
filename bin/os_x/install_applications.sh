@@ -22,6 +22,7 @@ declare -r -a HOMEBREW_PHP_FORMULAE=(
     "php54"
     "php54-xdebug"
     "composer"
+    "drush"
 )
 
 # Homebrew Casks
