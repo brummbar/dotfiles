@@ -39,12 +39,14 @@ declare -r -a HOMEBREW_CASKS=(
     # development
     "iterm2"
     "phpstorm"
-    "atom"
-    "brackets"
     "visual-studio-code"
     "imagealpha"
     "imageoptim"
     "filezilla"
+
+    # optional editors
+    # "atom"
+    # "brackets"
 
     # communication
     "skype"
