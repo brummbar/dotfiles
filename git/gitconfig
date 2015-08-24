@@ -2,8 +2,8 @@
     ui = auto
 [core]
     editor = vim
-    excludesfile = /Users/francesco/.gitignore
+    excludesfile = ~/.gitignore
 [push]
-	default = simple
+    default = simple
 [include]
     path = ~/.gitconfig.local
