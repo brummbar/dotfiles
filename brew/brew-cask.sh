@@ -15,9 +15,6 @@ brew cask install alfred
 # development
 brew cask install iterm2
 brew cask install phpstorm
-brew cask install atom
-brew cask install brackets
-brew cask install visual-studio-code
 brew cask install imagealpha
 brew cask install imageoptim
 brew cask install filezilla
@@ -30,3 +27,8 @@ brew cask install slack
 brew cask install spotify
 brew cask install qbittorrent
 brew cask install vlc
+
+# additional - not needed at install
+# brew cask install atom
+# brew cask install brackets
+# brew cask install visual-studio-code
