@@ -14,7 +14,7 @@ brew cask install alfred
 
 # development
 brew cask install iterm2
-brew cask install phpstorm
+# brew cask install phpstorm - disabled until the version with custom jdk is available through cask
 brew cask install imagealpha
 brew cask install imageoptim
 brew cask install filezilla
