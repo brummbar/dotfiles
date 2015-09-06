@@ -1,5 +1,6 @@
 #!/bin/bash -e
 
+brew install coreutils
 brew install openssl
 brew install curl
 brew install wget --enable-iri

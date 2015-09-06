@@ -18,6 +18,7 @@ brew cask install iterm2
 brew cask install imagealpha
 brew cask install imageoptim
 brew cask install filezilla
+brew cask install virtualbox
 
 # communication
 brew cask install skype
