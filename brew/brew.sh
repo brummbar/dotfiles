@@ -8,8 +8,8 @@ brew install git
 brew install composer
 
 brew tap homebrew/versions
-brew install php54
-brew install php54-xdebug
+brew install php56
+brew install php56-xdebug
 brew install mariadb
 
 brew install drupal-code-sniffer
