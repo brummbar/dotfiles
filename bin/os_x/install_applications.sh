@@ -7,20 +7,22 @@ cd "$(dirname "${BASH_SOURCE}")" && source "../utils.sh"
 
 declare -r -a HOMEBREW_FORMULAE=(
     "caskroom/cask/brew-cask"
+    "coreutils"
     "curl --with-openssl"
     "wget --enable-iri"
     "git"
     "mariadb"
     "htop-osx"
     "vim --override-system-vi"
+    "node"
 )
 
 # Homebrew Php Formulae
 # https://github.com/Homebrew/homebrew-php
 
 declare -r -a HOMEBREW_PHP_FORMULAE=(
-    "php54"
-    "php54-xdebug"
+    "php56"
+    "php56-xdebug"
     "composer"
     "drush"
 )
@@ -39,15 +41,16 @@ declare -r -a HOMEBREW_CASKS=(
 
     # development
     "iterm2"
-    "phpstorm"
-    "visual-studio-code"
+    "phpstorm-bundled-jdk"
     "imagealpha"
     "imageoptim"
     "filezilla"
+    "virtualbox"
 
     # optional editors
     # "atom"
     # "brackets"
+    # "visual-studio-code"
 
     # communication
     "skype"
