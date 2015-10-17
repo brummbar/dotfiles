@@ -107,9 +107,9 @@ install_composer() {
 
 }
 
-install_iojs() {
-    execute "curl -sL https://deb.nodesource.com/setup_iojs_1.x | sudo bash -" "Add NodeSource io.js repository"
-    install_package "iojs"
+install_nodejs() {
+    execute "curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -" "Add NodeSource node.js repository"
+    install_package "nodejs"
 }
 
 install_package() {
@@ -161,7 +161,7 @@ main() {
     remove_unneeded_packages
 
     install_composer
-    install_iojs
+    install_nodejs
 
 }
 
