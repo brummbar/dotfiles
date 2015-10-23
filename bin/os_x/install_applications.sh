@@ -25,6 +25,7 @@ declare -r -a HOMEBREW_PHP_FORMULAE=(
     "php56-xdebug"
     "composer"
     "drush"
+    "drupal-code-sniffer"
 )
 
 # Homebrew Casks
