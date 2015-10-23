@@ -15,7 +15,7 @@ set_iterm_preferences() {
     defaults write com.googlecode.iterm2 OnlyWhenMoreTabs -bool false && \
 
     # Do not check for test releases
-    defaults write com.googlecode.iterm2 CheckTestRelease -bool false && \
+    defaults write com.googlecode.iterm2 CheckTestRelease -bool false
 
 }
 
@@ -37,7 +37,7 @@ set_dashboard_preferences() {
 set_dock_preferences() {
 
     # Automatically hide or show the Dock
-    defaults write com.apple.dock autohide -bool true && \
+    defaults write com.apple.dock autohide -bool true
 
 }
 
@@ -58,7 +58,7 @@ set_finder_preferences() {
     defaults write com.apple.finder ShowRecentTags -bool false && \
 
     # Show path bar by default
-    defaults write com.apple.finder ShowPathbar -bool true && \
+    defaults write com.apple.finder ShowPathbar -bool true
 
 }
 
@@ -69,7 +69,7 @@ set_finder_preferences() {
 set_keyboard_preferences() {
 
     # Set the key repeat rate to fast
-    defaults write NSGlobalDomain KeyRepeat -int 2 && \
+    defaults write NSGlobalDomain KeyRepeat -int 2
 
 }
 
@@ -83,7 +83,7 @@ set_ui_and_ux_preferences() {
     defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true && \
 
     # Automatically quit the printer app once the print jobs are completed
-    defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true && \
+    defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
 
 }
 
