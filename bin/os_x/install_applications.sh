@@ -41,7 +41,6 @@ declare -r -a HOMEBREW_CASKS=(
 
     # development
     "iterm2"
-    "phpstorm-bundled-jdk"
     "imagealpha"
     "imageoptim"
     "filezilla"
@@ -67,6 +66,7 @@ declare -r -a HOMEBREW_CASKS=(
 
 declare -r -a HOMEBREW_ALTERNATE_CASKS=(
     "java6"
+    "phpstorm-bundled-jdk"
 )
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
