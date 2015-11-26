@@ -20,7 +20,7 @@ ask_for_confirmation() {
 ask_for_sudo() {
 
     # Ask for the administrator password upfront
-    sudo -v
+    sudo -v &> /dev/null
 
     # Update existing `sudo` time stamp until this script has finished
     # https://gist.github.com/cowboy/3118588
@@ -33,13 +33,12 @@ ask_for_sudo() {
 }
 
 cmd_exists() {
-    [ -x "$(command -v "$1")" ] \
-        && printf 0 \
-        || printf 1
+    command -v "$1" &> /dev/null
+    return $?
 }
 
 execute() {
-    $1 &> /dev/null
+    eval "$1" &> /dev/null
     print_result $? "${2:-$1}"
 }
 
@@ -50,12 +49,14 @@ get_answer() {
 get_os() {
 
     declare -r OS_NAME="$(uname -s)"
-    local os=""
+    local os=''
 
     if [ "$OS_NAME" == "Darwin" ]; then
-        os="osx"
+        os='osx'
     elif [ "$OS_NAME" == "Linux" ] && [ -e "/etc/lsb-release" ]; then
-        os="ubuntu"
+        os='ubuntu'
+    else
+        os="$OS_NAME"
     fi
 
     printf "%s" "$os"
@@ -63,9 +64,8 @@ get_os() {
 }
 
 is_git_repository() {
-    [ "$(git rev-parse &>/dev/null; printf $?)" -eq 0 ] \
-        && return 0 \
-        || return 1
+    git rev-parse &> /dev/null
+    return $?
 }
 
 mkd() {
