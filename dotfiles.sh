@@ -74,14 +74,14 @@ main() {
     # http://mywiki.wooledge.org/BashFAQ/028
     cd "$(dirname "${BASH_SOURCE}")";
 
-    source ./bin/utils.sh
+    source ./os/utils.sh
 
     ask_for_sudo
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
     print_info "Create symbolic links"
-    ./bin/create_symbolic_links.sh
+    ./os/create_symbolic_links.sh
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -91,7 +91,7 @@ main() {
     printf "\n"
 
     if answer_is_yes; then
-        ./bin/install_applications.sh
+        ./os/install_applications.sh
     fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -102,7 +102,7 @@ main() {
     printf "\n"
 
     if answer_is_yes; then
-        ./bin/install_prezto.sh
+        ./os/install_prezto.sh
     fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -113,7 +113,7 @@ main() {
     printf "\n"
 
     if answer_is_yes; then
-        ./bin/set_preferences.sh
+        ./os/set_preferences.sh
     fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -124,7 +124,7 @@ main() {
     printf "\n"
 
     if answer_is_yes; then
-        ./bin/configure_lamp.sh
+        ./os/configure_lamp.sh
     fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -135,7 +135,7 @@ main() {
     printf "\n"
 
     if answer_is_yes; then
-        ./bin/install_rvm.sh
+        ./os/install_rvm.sh
     fi
 
     # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -146,7 +146,7 @@ main() {
     printf "\n"
 
     if answer_is_yes; then
-        ./bin/restart_computer.sh
+        ./os/restart_computer.sh
     fi
 
 }

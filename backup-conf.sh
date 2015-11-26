@@ -28,7 +28,7 @@ main() {
     # http://mywiki.wooledge.org/BashFAQ/028
     cd "$(dirname "${BASH_SOURCE}")";
 
-    source ./bin/utils.sh
+    source ./os/utils.sh
 
     # Prepare migration folder
     if [ -d "$MIGRATION_DIR" ]; then
