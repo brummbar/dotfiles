@@ -77,6 +77,8 @@ brew_install() {
     declare -r -a FORMULAE=("${!1}"); shift;
     declare -r CMD="$1"
 
+    local i="", tmp=""
+
     for i in ${!FORMULAE[*]}; do
         tmp="${FORMULAE[$i]}"
         [ $(brew "$CMD" list "$tmp" &> /dev/null; printf $?) -eq 0 ] \
@@ -101,8 +103,6 @@ brew_tap() {
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 main() {
-
-    local i="", tmp=""
 
     # XCode Command Line Tools
     if [ $(xcode-select -p &> /dev/null; printf $?) -ne 0 ]; then
