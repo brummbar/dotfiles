@@ -167,9 +167,10 @@ main() {
             && brew_install "HOMEBREW_CASKS[@]" "cask"
         printf "\n"
 
-        brew_tap "caskroom/versions" \
-            && brew_install "HOMEBREW_ALTERNATE_CASKS[@]" "cask"
-        printf "\n"
+        # Uncomment this part if any alternate casks are needed.
+        # brew_tap "caskroom/versions" \
+        #     && brew_install "HOMEBREW_ALTERNATE_CASKS[@]" "cask"
+        # printf "\n"
 
     fi
 
