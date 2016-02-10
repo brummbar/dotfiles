@@ -47,6 +47,8 @@ declare -r -a HOMEBREW_CASKS=(
     "imageoptim"
     "filezilla"
     "virtualbox"
+    "java"
+    "phpstorm"
 
     # optional editors
     # "atom"
@@ -67,8 +69,6 @@ declare -r -a HOMEBREW_CASKS=(
 # https://github.com/caskroom/homebrew-versions
 
 declare -r -a HOMEBREW_ALTERNATE_CASKS=(
-    "java6"
-    "phpstorm-bundled-jdk"
 )
 
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
