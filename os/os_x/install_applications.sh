@@ -10,7 +10,7 @@ declare -r -a HOMEBREW_FORMULAE=(
     "coreutils"
     "curl --with-openssl"
     "wget --enable-iri"
-    "git"
+    "git --without-completions"
     "mariadb"
     "htop-osx"
     "vim --override-system-vi"
