@@ -141,13 +141,13 @@ main() {
     print_result $? 'XCode Command Line Tools'
 
     # Homebrew
-    if [ $(cmd_exists "brew") -eq 1 ]; then
+    if ! cmd_exists "brew"; then
         printf "\n" | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
         #  └─ simulate the ENTER keypress
         print_result $? "brew"
     fi
 
-    if [ $(cmd_exists "brew") -eq 0 ]; then
+    if cmd_exists "brew"; then
 
         execute "brew update" "brew (update)"
         execute "brew upgrade --all" "brew (upgrade)"
