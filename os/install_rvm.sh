@@ -7,7 +7,7 @@ cd "$(dirname "${BASH_SOURCE}")" && source "utils.sh"
 main() {
 
     # Check if `rvm` is installed
-    if [ $(cmd_exists "rvm") -eq 0 ]; then
+    if cmd_exists "rvm"; then
         print_error "RVM is already installed.\n"
         exit 0
     fi
