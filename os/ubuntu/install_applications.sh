@@ -50,26 +50,26 @@ add_ppa() {
 add_software_sources() {
 
     # Sublime Text 3
-    [ $(cmd_exists "subl") -eq 1 ] \
+    ! cmd_exists "subl" \
         && add_ppa "webupd8team/sublime-text-3"
 
     # Oracle JDK 8
-    [ $(cmd_exists "java") -eq 1 ] \
+    ! cmd_exists "java" \
         && add_ppa "webupd8team/java"
 
     # Terminator
-    [ $(cmd_exists "terminator") -eq 1 ] \
+    ! cmd_exists "terminator" \
         && add_ppa "gnome-terminator"
 
     # Google Chrome
-    [ $(cmd_exists "google-chrome") -eq 1 ] \
+    ! cmd_exists "google-chrome" \
         && add_key "https://dl-ssl.google.com/linux/linux_signing_key.pub" \
         && add_source_list \
                 "http://dl.google.com/linux/chrome/deb/ stable main" \
                 "google-chrome.list"
 
     # Opera
-    [ $(cmd_exists "opera") -eq 1 ] \
+    ! cmd_exists "opera" \
         && add_key "http://deb.opera.com/archive.key" \
         && add_source_list \
                 "http://deb.opera.com/opera-stable/ stable non-free" \
@@ -85,7 +85,7 @@ install_composer() {
 
     local tmpFile="$(mktemp -u XXXXX)"
 
-    if [ $(cmd_exists "composer") -eq 0 ]; then
+    if cmd_exists "composer"; then
         print_success "Composer already installed" && return
     fi
 
@@ -115,7 +115,7 @@ install_nodejs() {
 install_package() {
     local q="${2:-$1}"
 
-    if [ $(cmd_exists "$q") -eq 1 ]; then
+    if ! cmd_exists "$q"; then
         execute "sudo apt-get install --allow-unauthenticated -qqy $1" "$1"
         #                                      suppress output ─┘│
         #            assume "yes" as the answer to all prompts ──┘
