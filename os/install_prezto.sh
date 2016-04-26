@@ -24,7 +24,7 @@ main() {
     local targetFile=""
 
     # Check if `Git` is installed
-    if [ $(cmd_exists "git") -eq 1 ]; then
+    if ! cmd_exists "git"; then
         print_error "Git is required, please install it!\n"
         exit 1
     fi
