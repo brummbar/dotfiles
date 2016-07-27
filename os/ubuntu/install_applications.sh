@@ -62,7 +62,7 @@ add_software_sources() {
     ! cmd_exists "google-chrome" \
         && add_key "https://dl-ssl.google.com/linux/linux_signing_key.pub" \
         && add_source_list \
-                "http://dl.google.com/linux/chrome/deb/ stable main" \
+                "[arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" \
                 "google-chrome.list"
 
     # Opera
@@ -71,6 +71,11 @@ add_software_sources() {
         && add_source_list \
                 "http://deb.opera.com/opera-stable/ stable non-free" \
                 "opera.list"
+
+    # Automatically answer `Yes` to the `package configuration` prompt.
+    printf "opera-stable opera-stable/add-deb-source boolean true\n" \
+       | sudo debconf-set-selections
+
 
 }
 
