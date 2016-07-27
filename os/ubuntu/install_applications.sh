@@ -7,7 +7,6 @@ declare -a APT_PACKAGES=(
     "curl"
     "git"
     "htop"
-    "terminator"
     "vim"
     "zsh"
 
@@ -56,10 +55,6 @@ add_software_sources() {
     # Oracle JDK 8
     ! cmd_exists "java" \
         && add_ppa "webupd8team/java"
-
-    # Terminator
-    ! cmd_exists "terminator" \
-        && add_ppa "gnome-terminator"
 
     # Google Chrome
     ! cmd_exists "google-chrome" \
@@ -112,6 +107,12 @@ install_nodejs() {
     install_package "nodejs"
 }
 
+install_terminator() {
+    ! cmd_exists "terminator" \
+        && add_ppa "gnome-terminator"
+        && install_package "terminator"
+}
+
 install_package() {
     local q="${2:-$1}"
 
@@ -162,6 +163,7 @@ main() {
 
     install_composer
     install_nodejs
+    #install_terminator
 
 }
 
