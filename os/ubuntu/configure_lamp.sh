@@ -6,15 +6,15 @@ cd "$(dirname "${BASH_SOURCE}")" && source "../utils.sh"
 
 main() {
 
-	declare -r PHPINI="/etc/php5/apache2/php.ini"
+	declare -r PHPINI="/etc/php/7.0/apache2/php.ini"
 
 	# Configure php.ini
 	if [ -f $PHPINI ]; then
 
 		# Create a backup first
-		execute "cp $PHPINI $PHPINI.orig" "Backup $PHPINI → $PHPINI.orig" "true"
+		execute "sudo cp $PHPINI $PHPINI.orig" "Backup $PHPINI → $PHPINI.orig" "true"
 
-		sed -i \
+		sudo sed -i \
 			-e "s/^\(display_errors = \)Off/\1On/" \
 			-e "s/^\(display_startup_errors = \)Off/\1On/" \
 			-e "s/^\(html_errors = \)Off/\1On/" \
@@ -28,10 +28,10 @@ main() {
 	fi
 
 	# Enable mod_rewrite
-	execute "a2enmod rewrite" "mod_rewrite enabled"
+	execute "sudo a2enmod rewrite" "mod_rewrite enabled"
 
 	# Restart apache
-	execute "service apache2 restart" "Restart Apache"
+	execute "sudo service apache2 restart" "Restart Apache"
 
 }
 
