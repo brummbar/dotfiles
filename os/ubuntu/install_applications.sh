@@ -31,7 +31,7 @@ declare -a APT_PACKAGES=(
 
     # Other
     "qbittorrent"
-    "unity-tweak-tool"
+    #"unity-tweak-tool"
     "vlc"
 
 )
