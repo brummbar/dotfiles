@@ -164,7 +164,7 @@ main() {
     remove_unneeded_packages
 
     install_composer
-    install_nodejs
+    #install_nodejs
     #install_terminator
 
 }
