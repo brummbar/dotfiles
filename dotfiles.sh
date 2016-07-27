@@ -120,7 +120,7 @@ main() {
 
     print_info "Configure LAMP"
 
-    ask_for_confirmation "Do you want to configure the LAMP stack (Ubuntu only)?"
+    ask_for_confirmation "Do you want to configure the LAMP stack?"
     printf "\n"
 
     if answer_is_yes; then

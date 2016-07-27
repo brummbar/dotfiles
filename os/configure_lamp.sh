@@ -8,7 +8,9 @@ main() {
 
     declare -r OS="$(get_os)"
 
-    if [ "$OS" == "ubuntu" ]; then
+    if [ "$OS" == "osx" ]; then
+        ./os_x/configure_lamp.sh
+    elif [ "$OS" == "ubuntu" ]; then
         ./ubuntu/configure_lamp.sh
     fi
 
