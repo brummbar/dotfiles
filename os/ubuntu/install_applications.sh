@@ -11,12 +11,14 @@ declare -a APT_PACKAGES=(
     "zsh"
 
     # Lamp
-    "php5"
+    "apache2"
+    "php"
+    "libapache2-mod-php"
     "mariadb-server"
-    "php5-mysql"
-    "php5-curl"
-    "php5-xdebug"
-    "php5-gd"
+    "php-mysql"
+    "php-curl"
+    "php-xdebug"
+    "php-gd"
 
     # Browsers
     "google-chrome-stable"
