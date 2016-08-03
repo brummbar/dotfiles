@@ -19,6 +19,8 @@ declare -a APT_PACKAGES=(
     "php-curl"
     "php-xdebug"
     "php-gd"
+    "php-mbstring"
+    "php-xml"
 
     # Browsers
     "google-chrome-stable"
