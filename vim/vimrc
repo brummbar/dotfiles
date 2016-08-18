@@ -8,7 +8,6 @@ set autoindent
 set backspace=indent,eol,start
 set ignorecase
 set incsearch
-set nomodeline
 set number
 set ruler
 set showcmd
