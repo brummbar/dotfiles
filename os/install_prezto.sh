@@ -65,7 +65,7 @@ main() {
 
     # Symlink the matching vim color
     mkdir -p "$HOME/.vim/colors"
-    symlink "$HOME/.vim/colors/base16-tomorrow.vim" "$BASE16_DIR/base16-vim/colors/base16-tomorrow.vim"
+    symlink "$HOME/.vim/colors/base16-tomorrow-night.vim" "$BASE16_DIR/base16-vim/colors/base16-tomorrow-night.vim"
 
     # Install iTerm2/Terminator color schemes based on os.
     if [ "$OS" == "osx" ]; then

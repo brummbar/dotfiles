@@ -2,7 +2,7 @@ set nocompatible
 
 let base16colorspace=256
 set background=dark
-colorscheme base16-tomorrow
+colorscheme base16-tomorrow-night
 
 set autoindent
 set backspace=indent,eol,start
