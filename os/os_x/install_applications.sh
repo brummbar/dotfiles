@@ -21,7 +21,7 @@ declare -r -a HOMEBREW_FORMULAE=(
 # https://github.com/Homebrew/homebrew-php
 
 declare -r -a HOMEBREW_PHP_FORMULAE=(
-    "php56"
+    "php56 --without-ldap"
     "php56-xdebug"
     "php56-memcached"
     "composer"
