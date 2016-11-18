@@ -6,6 +6,10 @@ colorscheme base16-tomorrow-night
 
 syntax on
 
+if has("autocmd")
+  filetype plugin indent on
+endif
+
 set autoindent
 set backspace=indent,eol,start
 set ignorecase
@@ -15,8 +19,3 @@ set ruler
 set showcmd
 set showmatch
 set smartcase
-
-if has("filetype")
-  filetype on
-  filetype indent on
-endif
