@@ -1,40 +1,42 @@
 [global_config]
+  enabled_plugins = APTURLHandler, LaunchpadCodeURLHandler, LaunchpadBugURLHandler
+  geometry_hinting = False
   title_hide_sizetext = True
-  title_transmit_bg_color = "#cc6666"
-  focus = system
   title_inactive_bg_color = "#969896"
+  title_transmit_bg_color = "#cc6666"
+  window_state = maximise
 [keybindings]
-[profiles]
-  [[default]]
-    palette = "#1d1f21:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#c5c8c6:#969896:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#ffffff"
-    background_image = None
-    cursor_color = "#c5c8c6"
-    foreground_color = "#c5c8c6"
-    copy_on_selection = True
-    background_color = "#1d1f21"
-    allow_bold = False
-  [[Base16 Tomorrow Dark]]
-    palette = "#1d1f21:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#c5c8c6:#969896:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#ffffff"
-    copy_on_selection = True
-    background_image = None
-    background_darkness = 0.97
-    scrollback_lines = 1000
-    background_type = transparent
-    use_system_font = False
-    cursor_color = "#c5c8c6"
-    foreground_color = "#c5c8c6"
-    use_custom_command = True
-    custom_command = env TERM=xterm-256color /usr/bin/zsh
-    font = Ubuntu Mono 12
-    background_color = "#1d1f21"
 [layouts]
   [[default]]
     [[[child1]]]
-      type = Terminal
       parent = window0
       profile = Base16 Tomorrow Dark
+      type = Terminal
     [[[window0]]]
-      type = Window
       parent = ""
       size = 900, 600
+      type = Window
 [plugins]
+[profiles]
+  [[default]]
+    allow_bold = False
+    background_color = "#1d1f21"
+    background_image = None
+    copy_on_selection = True
+    cursor_color = "#c5c8c6"
+    foreground_color = "#c5c8c6"
+    palette = "#1d1f21:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#c5c8c6:#969896:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#ffffff"
+  [[Base16 Tomorrow Dark]]
+    background_color = "#1d1f21"
+    background_darkness = 0.97
+    background_image = None
+    background_type = transparent
+    copy_on_selection = True
+    cursor_color = "#c5c8c6"
+    custom_command = env TERM=xterm-256color /usr/bin/zsh
+    font = Monospace 10
+    foreground_color = "#c5c8c6"
+    palette = "#1d1f21:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#c5c8c6:#969896:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#ffffff"
+    scrollback_lines = 1000
+    use_custom_command = True
+    use_system_font = False
