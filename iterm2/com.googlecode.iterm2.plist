@@ -388,7 +388,7 @@
 	<key>NSWindow Frame SharedPreferences</key>
 	<string>533 370 796 474 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 10 1915 1047 0 0 1920 1057 </string>
+	<string>0 6 1915 1051 0 0 1920 1057 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>363 10 1145 707 0 0 1600 877 </string>
 	<key>New Bookmarks</key>
@@ -1191,6 +1191,12 @@
 					<string>BounceTrigger</string>
 					<key>regex</key>
 					<string>Drupal installation finished.</string>
+				</dict>
+				<dict>
+					<key>action</key>
+					<string>BounceTrigger</string>
+					<key>regex</key>
+					<string>Cache rebuild complete.</string>
 				</dict>
 			</array>
 			<key>Unlimited Scrollback</key>
