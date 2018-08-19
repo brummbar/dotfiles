@@ -52,7 +52,7 @@ set_finder_preferences() {
 
     # Set `Desktop` as the default location for new Finder windows
     defaults write com.apple.finder NewWindowTarget -string "PfHm" && \
-    defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/" && \
+    defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}/Desktop/" && \
 
     # Don't show recent tags
     defaults write com.apple.finder ShowRecentTags -bool false && \
