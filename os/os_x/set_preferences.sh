@@ -79,8 +79,9 @@ set_keyboard_preferences() {
 
 set_ui_and_ux_preferences() {
 
-    # Avoid creating `.DS_Store` files on network volumes
+    # Avoid creating `.DS_Store` files on network and USB volumes
     defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true && \
+    defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true && \
 
     # Automatically quit the printer app once the print jobs are completed
     defaults write com.apple.print.PrintingPrefs "Quit When Finished" -bool true
