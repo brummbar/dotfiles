@@ -112,7 +112,7 @@ install_composer() {
 }
 
 install_nodejs() {
-    execute "curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -" "Add NodeSource node.js repository"
+    execute "curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -" "Add NodeSource node.js repository"
     install_package "nodejs"
 }
 
